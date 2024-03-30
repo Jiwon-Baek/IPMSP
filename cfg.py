@@ -9,7 +9,7 @@ def get_cfg():
     parser.add_argument("--load_model", type=bool, default=False, help="load the trained model")
     parser.add_argument("--model_path", type=str, default=None, help="model file path")
 
-    parser.add_argument("--n_episode", type=int, default=50000, help="Number of episodes to train")
+    parser.add_argument("--n_episode", type=int, default=10000, help="Number of episodes to train")
     parser.add_argument("--eval_every", type=int, default=100, help="Evaluate every x frames")
     parser.add_argument("--save_every", type=int, default=1000, help="Save a model every x frames")
     parser.add_argument("--num_job", type=int, default=100, help="the Number of jobs")
