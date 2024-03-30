@@ -29,7 +29,7 @@ if __name__ == "__main__":
         learning_rate = 0.005 if not cfg.use_vessl else cfg.lr
         K_epoch = 1 if not cfg.use_vessl else cfg.K_epoch
         T_horizon = "entire" if not cfg.use_vessl else cfg.T_horizon
-        num_episode = 1000
+        num_episode = 10000
         num_job = cfg.num_job
         num_m = cfg.num_machine
 
