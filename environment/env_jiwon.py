@@ -185,8 +185,8 @@ class PMSP:
                 setup_time = abs(job.feature - line_setup)
                 f_5[i, setup_time] += 1 / len(input_queue)
 
-            f_7[i] = (self.sim_env.now - line.start_time) / (line.expected_finish_time - line.start_time) if line.job is not None else 1.0
-            # f_7[i] = (self.sim_env.now - line.start_time) / (line.expected_finish_time - line.start_time) if line.job is not None else 0.0
+            # f_7[i] = (self.sim_env.now - line.start_time) / (line.expected_finish_time - line.start_time) if line.job is not None else 1.0
+            f_7[i] = (self.sim_env.now - line.start_time) / (line.expected_finish_time - line.start_time) if line.job is not None else 0.0
 
         f_6[0] = self.sink.completed / self.num_job
 
