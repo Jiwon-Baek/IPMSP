@@ -11,6 +11,7 @@ class Job:
         self.name = name
         self.processing_time = processing_time
         self.feature = feature
+        self.is_tardy = None
 
         self.due_date = 0
         self.completion_time = 0
@@ -71,9 +72,12 @@ class Routing:
         self.queue_list = list()  # 현재 routing.queue에 있는 job list
 
         self.setup = 0
+        self.basic_setup = 2
         self.created = 0
         self.queue_event = self.env.event()  # Machine에서 요청 시 job이 없을 때, routing class를 holding 하는 이벤트
         self.is_queue_event = False  # self.queue.event가 활성화 됐는지
+
+        self.is_tardy = []
         env.process(self.run())
 
     def run(self):
@@ -107,8 +111,15 @@ class Routing:
             else:
                 next_job = None
 
+            if next_job.due_date < self.env.now:
+                next_job.is_tardy = True
+                self.is_tardy.append(True)
+            # if self.is_tardy:
+            #     print('The router picked a tardy job.')
+
             self.created += 1
-            self.setup = abs(next_job.feature - self.model[self.machine].setup)
+            self.setup = abs(next_job.feature - self.model[self.machine].setup) + self.basic_setup
+            # self.setup = abs(next_job.feature - self.model[self.machine].setup)
             self.monitor.record(time=self.env.now, job=next_job.name, event="Move to Machine", class_name=self.name,
                                 queue=len(self.queue.items), memo=self.setup)
             self.model[self.machine].queue.put(next_job)
@@ -121,7 +132,8 @@ class Routing:
         calling_machine = self.model[self.machine]
 
         for job in job_list:
-            setup_time = abs(job.feature - calling_machine.setup)
+            setup_time = abs(job.feature - calling_machine.setup) + self.basic_setup
+            # setup_time = abs(job.feature - calling_machine.setup)
             expected_pt = setup_time + job.processing_time
             if expected_pt < min_sspt:
                 min_job_list = [job.name]
@@ -247,6 +259,7 @@ class Process:
         self.monitor = monitor
         self.pt_var = pt_var
         self.setup = random.randint(0, 5)
+        self.basic_setup = 2
 
         self.queue = simpy.Store(env)
         self.job = None
@@ -267,7 +280,7 @@ class Process:
             self.monitor.record(time=self.env.now, event="Get the Job", job=job.name, class_name=self.name)
             self.idle = False
             self.start_time = self.env.now
-            setup_time = abs(self.setup - job.feature)
+            setup_time = abs(self.setup - job.feature) + self.basic_setup
             self.expected_finish_time = self.env.now + setup_time + job.processing_time
 
             if setup_time > 0:

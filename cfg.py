@@ -29,3 +29,7 @@ def get_cfg():
     args = parser.parse_args()
 
     return args
+
+
+python run.py --env OE --use_vessl 1 
+    

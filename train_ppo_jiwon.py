@@ -6,7 +6,8 @@ import math
 
 from cfg import get_cfg
 from agent.ppo import *
-from environment.env_jiwon import PMSP
+# from environment.env_jiwon import PMSP
+from environment.env import PMSP
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
@@ -29,7 +30,7 @@ if __name__ == "__main__":
         learning_rate = 0.005 if not cfg.use_vessl else cfg.lr
         K_epoch = 1 if not cfg.use_vessl else cfg.K_epoch
         T_horizon = "entire" if not cfg.use_vessl else cfg.T_horizon
-        num_episode = 10000
+        num_episode = 1000
         num_job = cfg.num_job
         num_m = cfg.num_machine
 
@@ -80,7 +81,8 @@ if __name__ == "__main__":
                 logit = agent.pi(torch.from_numpy(state).float().to(device))
                 prob = torch.softmax(logit, dim=-1)
 
-                m = Categorical(prob)
+                # tensor([nan, nan, nan, nan], device='cuda:0', grad_fn=<DivBackward0>)
+                m = Categorical(prob) # 왜 에러가 떴을까,,,,,,
                 action = m.sample().item()
                 next_state, reward, done = env.step(action)
 

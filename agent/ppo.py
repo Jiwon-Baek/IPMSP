@@ -68,8 +68,14 @@ class PPO(nn.Module):
 
         # self.data에 있는 transition들을 list 변수에 담고 tensor화
         # 데이터를 배치로 변화시키는 과정
+        s_lst = np.array(s_lst)
+        a_lst = np.array(a_lst)
+        r_lst = np.array(r_lst)
+        s_prime_lst = np.array(s_prime_lst)
+        prob_a_lst = np.array(prob_a_lst)
+        done_lst = np.array(done_lst)
 
-        s, a, r, s_prime, prob_a, done = torch.tensor(s_lst, dtype=torch.float).to(device), torch.tensor(a_lst).to(device), \
+        s, a, r, s_prime, prob_a, done = torch.tensor(s_lst, dtype=torch.float).to(device), torch.tensor(a_lst, dtype=torch.int64).to(device), \
                                          torch.tensor(r_lst, dtype=torch.float).to(device), torch.tensor(s_prime_lst, dtype=torch.float).to(device), \
                                          torch.tensor(prob_a_lst).to(device), torch.tensor(done_lst, dtype=torch.float).to(device)
 

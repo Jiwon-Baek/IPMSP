@@ -13,8 +13,17 @@ class PMSP:
         self.test_sample = test_sample
         self.reward_weight = reward_weight if reward_weight is not None else [0.5, 0.5]
         self.rule_weight = rule_weight
-        self.ddt = ddt
-        self.pt_var = pt_var
+
+        # self.ddt = 2.0
+        if is_train:
+            self.ddt = np.random.uniform(low=0.8, high=1.2)
+            self.pt_var = np.random.uniform(low=0.1, high=0.5)
+        else:
+            self.ddt = ddt
+            self.pt_var = pt_var
+
+        # self.pt_var = 0.25
+        # self.ddt = 0.9
         self.is_train = is_train
 
         self.state_dim = 2 * num_m + 8
@@ -33,6 +42,14 @@ class PMSP:
         self.reward_setup = 0
         self.reward_tard = 0
 
+        # Debugging variables
+        self.calling_line = None
+        self.calling_setting = None
+        self.input_queue = None
+        self.n_route = 0
+        self.recent_tardy = []
+        self.n_tardy_in_queue = 0
+
         self.sim_env, self.model, self.source, self.sink, self.routing, self.monitor = self._modeling()
 
     def step(self, action):
@@ -42,7 +59,10 @@ class PMSP:
 
         self.routing.decision.succeed(routing_rule)
         self.routing.indicator = False
-
+        if len(self.routing.is_tardy)>0:
+            self.recent_tardy.append(self.routing.is_tardy[-1])
+        else:
+            self.recent_tardy.append(False)
         while True:
             if self.routing.indicator:
                 if self.sim_env.now != self.time:
@@ -63,6 +83,7 @@ class PMSP:
 
         reward = self._calculate_reward()
         next_state = self._get_state()
+        self.n_route += 1
 
         return next_state, reward, done
 
@@ -73,6 +94,7 @@ class PMSP:
         monitor.reset()
 
         iat = 15 / self.num_m
+        # iat = 20 / self.num_m
 
         model = dict()
         job_list = list()
@@ -101,8 +123,12 @@ class PMSP:
     def reset(self):
         self.episode = self.episode + 1 if self.episode > 1 else 1  # episode
         if self.is_train:
+            """ DDT와 Processing time의 variance는 매 episode마다 reset됨"""
+
             self.pt_var = np.random.uniform(low=0.1, high=0.5)
             self.ddt = np.random.uniform(low=0.8, high=1.2)
+            # self.pt_var = 0.25
+            # self.ddt = 0.9
 
         self.sim_env, self.model, self.source, self.sink, self.routing, self.monitor = self._modeling()
         self.done = False
@@ -119,32 +145,40 @@ class PMSP:
 
         return self._get_state()
 
+    def count_tardy(self):
+        self.n_tardy_in_queue = 0
+        for job in self.input_queue:
+            if job.due_date < self.sim_env.now:
+                job.is_tardy = True
+                self.n_tardy_in_queue += 1
+        return self.n_tardy_in_queue
     def _get_state(self):
+        self.n_tardy_in_queue = 0
         f_1 = np.zeros(self.num_m)  # Setup -> 현재 라인의 셋업 값과 같은 셋업인 job의 수
         f_2 = np.zeros(4)  # Due Date -> Tardiness level for non-setup
         f_3 = np.zeros(4)  # Due Date -> Tardiness level for setup
         f_4 = np.zeros(self.num_m)  # General Info -> 각 라인의 progress rate
-
-        input_queue = copy.deepcopy(list(self.routing.queue.items))
+        self.input_queue = copy.deepcopy(list(self.routing.queue.items))
         for line_num in range(self.num_m):
             line = self.model["Machine {0}".format(line_num)]
-            same_setup_list = [1 for job in input_queue if job.feature == line.setup]
-            f_1[line_num] = np.sum(same_setup_list) / len(input_queue) if len(input_queue) > 0 else 0.0
+            same_setup_list = [1 for job in self.input_queue if job.feature == line.setup]
+            f_1[line_num] = np.sum(same_setup_list) / len(self.input_queue) if len(self.input_queue) > 0 else 0.0
 
             if line.job is not None and not line.idle:  # 현재 작업 중인 job이 있을 때
                 f_4[line_num] = (line.expected_finish_time - self.sim_env.now) / (
                             line.expected_finish_time - line.start_time)
 
         # feature 2, 3
-        calling_line = self.model[self.routing.machine]
-        setting = calling_line.setup
+        self.calling_line = self.model[self.routing.machine]
+        self.calling_setting = self.calling_line.setup
 
         non_setup_list = list()
         setup_list = list()
 
-        if len(input_queue)> 0:
-            for job in input_queue:
-                if job.feature == setting:
+        if len(self.input_queue)> 0:
+            for job in self.input_queue:
+
+                if job.feature == self.calling_setting:
                     non_setup_list.append(job)
                 else:
                     setup_list.append(job)
@@ -171,10 +205,14 @@ class PMSP:
                 else:
                     print(0)
 
-            f_2[0] = g_1 / len(non_setup_list)
-            f_2[1] = g_2 / len(non_setup_list)
-            f_2[2] = g_3 / len(non_setup_list)
-            f_2[3] = g_4 / len(non_setup_list)
+            # f_2[0] = g_1 / len(non_setup_list)
+            # f_2[1] = g_2 / len(non_setup_list)
+            # f_2[2] = g_3 / len(non_setup_list)
+            # f_2[3] = g_4 / len(non_setup_list)
+            f_2[0] = g_1
+            f_2[1] = g_2
+            f_2[2] = g_3
+            f_2[3] = g_4
 
         if len(setup_list) > 0:
             g_1 = 0
@@ -198,22 +236,28 @@ class PMSP:
                 else:
                     print(0)
 
-            f_3[0] = g_1 / len(setup_list)
-            f_3[1] = g_2 / len(setup_list)
-            f_3[2] = g_3 / len(setup_list)
-            f_3[3] = g_4 / len(setup_list)
-
+            # f_3[0] = g_1 / len(setup_list)
+            # f_3[1] = g_2 / len(setup_list)
+            # f_3[2] = g_3 / len(setup_list)
+            # f_3[3] = g_4 / len(setup_list)
+            f_3[0] = g_1
+            f_3[1] = g_2
+            f_3[2] = g_3
+            f_3[3] = g_4
         state = np.concatenate((f_1, f_2, f_3, f_4), axis=None)
         return state
 
     def _calculate_reward(self):
         reward_1 = - self.routing.setup / 5
         self.reward_setup -= self.routing.setup / 5
+        # reward_1 = 0.3 / self.routing.setup
+        # self.reward_setup += 0.3 / self.routing.setup
 
         reward_2 = 0.0
         if len(self.sink.tardiness) > 0:
             for tardiness in self.sink.tardiness:
-                reward_2 += np.exp(-tardiness) - 1
+                # reward_2 += np.exp(-tardiness) - 1
+                reward_2 += np.exp(-tardiness)
 
         # reward_2 = np.exp(-self.sink.tardiness) - 1
         self.reward_tard += reward_2
