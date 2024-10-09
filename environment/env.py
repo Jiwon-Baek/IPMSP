@@ -191,6 +191,7 @@ class PMSP:
 
             for non_setup_job in non_setup_list:
                 job_dd = non_setup_job.due_date
+
                 max_tightness = job_dd - (1 + self.pt_var) * non_setup_job.processing_time - self.sim_env.now
                 min_tightness = job_dd - (1 - self.pt_var) * non_setup_job.processing_time - self.sim_env.now
 
@@ -215,6 +216,7 @@ class PMSP:
             f_2[3] = g_4
 
         if len(setup_list) > 0:
+
             g_1 = 0
             g_2 = 0
             g_3 = 0
@@ -247,6 +249,7 @@ class PMSP:
         state = np.concatenate((f_1, f_2, f_3, f_4), axis=None)
         return state
 
+
     def _calculate_reward(self):
         reward_1 = - self.routing.setup / 5
         self.reward_setup -= self.routing.setup / 5
@@ -270,4 +273,5 @@ class PMSP:
     def get_logs(self, path=None):
         log = self.monitor.get_logs(path)
         return log
+
 

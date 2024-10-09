@@ -1,0 +1,1001 @@
+﻿Time,Event,Job,Class,Queue,Memo
+0.0,Created,Job 0,Source,,16.86669348675114
+0.0,Move to Routing,Job 0,Source,1.0,
+0.0,Routing Request,,Machine 0,1.0,
+0.0,Routing Request,,Machine 1,1.0,
+0.0,Routing Request,,Machine 2,1.0,
+0.0,Routing Request,,Machine 3,1.0,
+0.0,Routing Request,,Machine 4,1.0,
+0.0,Routing Start,,Routing,1.0,SSPT
+0.0,Move to Machine,Job 0,Routing,0.0,5
+0.0,Get the Job,Job 0,Machine 0,,
+0.0,Setup,Job 0,Machine 0,,5
+5.0,Work Start,Job 0,Machine 0,,
+5.39,Created,Job 1,Source,,19.740705231352237
+5.39,Move to Routing,Job 1,Source,1.0,
+5.39,Routing Start,,Routing,1.0,SSPT
+5.39,Move to Machine,Job 1,Routing,0.0,2
+5.39,Get the Job,Job 1,Machine 1,,
+5.39,Setup,Job 1,Machine 1,,2
+7.21,Created,Job 2,Source,,26.856294219916112
+7.21,Move to Routing,Job 2,Source,1.0,
+7.21,Routing Start,,Routing,1.0,SSPT
+7.21,Move to Machine,Job 2,Routing,0.0,7
+7.21,Get the Job,Job 2,Machine 2,,
+7.21,Setup,Job 2,Machine 2,,7
+7.39,Work Start,Job 1,Machine 1,,
+8.93,Created,Job 3,Source,,30.311643773430355
+8.93,Move to Routing,Job 3,Source,1.0,
+8.93,Routing Start,,Routing,1.0,SSPT
+8.93,Move to Machine,Job 3,Routing,0.0,6
+8.93,Get the Job,Job 3,Machine 3,,
+8.93,Setup,Job 3,Machine 3,,6
+9.64,Created,Job 4,Source,,23.859660664979792
+9.64,Move to Routing,Job 4,Source,1.0,
+9.64,Routing Start,,Routing,1.0,SSPT
+9.64,Move to Machine,Job 4,Routing,0.0,5
+9.64,Get the Job,Job 4,Machine 4,,
+9.64,Setup,Job 4,Machine 4,,5
+10.01,Created,Job 5,Source,,27.556048829775293
+10.01,Move to Routing,Job 5,Source,1.0,
+14.21,Work Start,Job 2,Machine 2,,
+14.64,Work Start,Job 4,Machine 4,,
+14.83,Created,Job 6,Source,,29.21979942625081
+14.83,Move to Routing,Job 6,Source,2.0,
+14.93,Work Start,Job 3,Machine 3,,
+18.42,Created,Job 7,Source,,31.332886277519684
+18.42,Move to Routing,Job 7,Source,3.0,
+18.87,Work Finish,Job 0,Machine 0,,
+18.87,Completed,Job 0,Sink,,1.9994388869716744
+18.87,Routing Request,,Machine 0,3.0,
+18.87,Routing Start,,Routing,3.0,SSPT
+18.87,Move to Machine,Job 7,Routing,2.0,2
+18.87,Get the Job,Job 7,Machine 0,,
+18.87,Setup,Job 7,Machine 0,,2
+19.19,Work Finish,Job 1,Machine 1,,
+19.19,Completed,Job 1,Sink,,0
+19.19,Routing Request,,Machine 1,2.0,
+19.19,Routing Start,,Routing,2.0,SSPT
+19.19,Move to Machine,Job 6,Routing,1.0,6
+19.19,Get the Job,Job 6,Machine 1,,
+19.19,Setup,Job 6,Machine 1,,6
+20.19,Created,Job 8,Source,,37.95114866066179
+20.19,Move to Routing,Job 8,Source,2.0,
+20.87,Work Start,Job 7,Machine 0,,
+20.91,Created,Job 9,Source,,36.068187393986854
+20.91,Move to Routing,Job 9,Source,3.0,
+24.74,Created,Job 10,Source,,41.83791304944568
+24.74,Move to Routing,Job 10,Source,4.0,
+25.19,Work Start,Job 6,Machine 1,,
+26.33,Work Finish,Job 4,Machine 4,,
+26.33,Completed,Job 4,Sink,,2.469749517285365
+26.33,Routing Request,,Machine 4,4.0,
+26.33,Routing Start,,Routing,4.0,SSPT
+26.33,Move to Machine,Job 9,Routing,3.0,5
+26.33,Get the Job,Job 9,Machine 4,,
+26.33,Setup,Job 9,Machine 4,,5
+30.36,Work Finish,Job 2,Machine 2,,
+30.36,Completed,Job 2,Sink,,3.505003768577268
+30.36,Routing Request,,Machine 2,3.0,
+30.36,Routing Start,,Routing,3.0,SSPT
+30.36,Move to Machine,Job 5,Routing,2.0,2
+30.36,Get the Job,Job 5,Machine 2,,
+30.36,Setup,Job 5,Machine 2,,2
+30.79,Created,Job 11,Source,,45.91242031169927
+30.79,Move to Routing,Job 11,Source,3.0,
+31.33,Work Start,Job 9,Machine 4,,
+31.34,Created,Job 12,Source,,45.09989766803233
+31.34,Move to Routing,Job 12,Source,4.0,
+31.48,Work Finish,Job 7,Machine 0,,
+31.48,Completed,Job 7,Sink,,0.14529592456944584
+31.48,Routing Request,,Machine 0,4.0,
+31.48,Routing Start,,Routing,4.0,SSPT
+31.48,Move to Machine,Job 12,Routing,3.0,4
+31.48,Get the Job,Job 12,Machine 0,,
+31.48,Setup,Job 12,Machine 0,,4
+32.36,Work Start,Job 5,Machine 2,,
+32.51,Work Finish,Job 3,Machine 3,,
+32.51,Completed,Job 3,Sink,,2.1964206890466116
+32.51,Routing Request,,Machine 3,3.0,
+32.51,Routing Start,,Routing,3.0,SSPT
+32.51,Move to Machine,Job 11,Routing,2.0,2
+32.51,Get the Job,Job 11,Machine 3,,
+32.51,Setup,Job 11,Machine 3,,2
+33.34,Created,Job 13,Source,,51.32826976963307
+33.34,Move to Routing,Job 13,Source,3.0,
+34.51,Work Start,Job 11,Machine 3,,
+35.19,Created,Job 14,Source,,54.25407199137076
+35.19,Move to Routing,Job 14,Source,4.0,
+35.48,Work Start,Job 12,Machine 0,,
+37.02,Work Finish,Job 6,Machine 1,,
+37.02,Completed,Job 6,Sink,,7.796012273594862
+37.02,Routing Request,,Machine 1,4.0,
+37.02,Routing Start,,Routing,4.0,SSPT
+37.02,Move to Machine,Job 13,Routing,3.0,3
+37.02,Get the Job,Job 13,Machine 1,,
+37.02,Setup,Job 13,Machine 1,,3
+40.02,Work Start,Job 13,Machine 1,,
+42.03,Created,Job 15,Source,,64.66051839580118
+42.03,Move to Routing,Job 15,Source,4.0,
+42.43,Created,Job 16,Source,,66.23129957765644
+42.43,Move to Routing,Job 16,Source,5.0,
+43.31,Created,Job 17,Source,,63.99765153585841
+43.31,Move to Routing,Job 17,Source,6.0,
+43.79,Work Finish,Job 9,Machine 4,,
+43.79,Completed,Job 9,Sink,,7.718859655575649
+43.79,Routing Request,,Machine 4,6.0,
+43.79,Routing Start,,Routing,6.0,SSPT
+43.79,Move to Machine,Job 10,Routing,5.0,2
+43.79,Get the Job,Job 10,Machine 4,,
+43.79,Setup,Job 10,Machine 4,,2
+45.79,Work Start,Job 10,Machine 4,,
+46.51,Created,Job 18,Source,,66.55719902996049
+46.51,Move to Routing,Job 18,Source,6.0,
+46.78,Work Finish,Job 5,Machine 2,,
+46.78,Completed,Job 5,Sink,,19.227239389158584
+46.78,Routing Request,,Machine 2,6.0,
+46.78,Routing Start,,Routing,6.0,SSPT
+46.78,Move to Machine,Job 18,Routing,5.0,2
+46.78,Get the Job,Job 18,Machine 2,,
+46.78,Setup,Job 18,Machine 2,,2
+46.79,Work Finish,Job 12,Machine 0,,
+46.79,Completed,Job 12,Sink,,1.6894357748256326
+46.79,Routing Request,,Machine 0,5.0,
+46.79,Routing Start,,Routing,5.0,SSPT
+46.79,Move to Machine,Job 17,Routing,4.0,3
+46.79,Get the Job,Job 17,Machine 0,,
+46.79,Setup,Job 17,Machine 0,,3
+46.94,Work Finish,Job 11,Machine 3,,
+46.94,Completed,Job 11,Sink,,1.0307772053699509
+46.94,Routing Request,,Machine 3,4.0,
+46.94,Routing Start,,Routing,4.0,SSPT
+46.94,Move to Machine,Job 8,Routing,3.0,6
+46.94,Get the Job,Job 8,Machine 3,,
+46.94,Setup,Job 8,Machine 3,,6
+48.66,Created,Job 19,Source,,67.90901604787555
+48.66,Move to Routing,Job 19,Source,4.0,
+48.78,Work Start,Job 18,Machine 2,,
+49.79,Work Start,Job 17,Machine 0,,
+52.46,Created,Job 20,Source,,65.80783063128847
+52.46,Move to Routing,Job 20,Source,5.0,
+52.94,Work Start,Job 8,Machine 3,,
+54.74,Created,Job 21,Source,,68.29846823049502
+54.74,Move to Routing,Job 21,Source,6.0,
+54.81,Work Finish,Job 13,Machine 1,,
+54.81,Completed,Job 13,Sink,,3.4791006666057456
+54.81,Routing Request,,Machine 1,6.0,
+54.81,Routing Start,,Routing,6.0,SSPT
+54.81,Move to Machine,Job 20,Routing,5.0,4
+54.81,Get the Job,Job 20,Machine 1,,
+54.81,Setup,Job 20,Machine 1,,4
+56.01,Created,Job 22,Source,,78.25509921790032
+56.01,Move to Routing,Job 22,Source,6.0,
+58.81,Work Start,Job 20,Machine 1,,
+59.84,Work Finish,Job 10,Machine 4,,
+59.84,Completed,Job 10,Sink,,18.006308313996
+59.84,Routing Request,,Machine 4,6.0,
+59.84,Routing Start,,Routing,6.0,SSPT
+59.84,Move to Machine,Job 21,Routing,5.0,2
+59.84,Get the Job,Job 21,Machine 4,,
+59.84,Setup,Job 21,Machine 4,,2
+61.84,Work Start,Job 21,Machine 4,,
+62.33,Created,Job 23,Source,,80.529692622474
+62.33,Move to Routing,Job 23,Source,6.0,
+65.26,Work Finish,Job 18,Machine 2,,
+65.26,Completed,Job 18,Sink,,0
+65.26,Routing Request,,Machine 2,6.0,
+65.26,Routing Start,,Routing,6.0,SSPT
+65.26,Move to Machine,Job 22,Routing,5.0,2
+65.26,Get the Job,Job 22,Machine 2,,
+65.26,Setup,Job 22,Machine 2,,2
+66.8,Work Finish,Job 17,Machine 0,,
+66.8,Completed,Job 17,Sink,,2.797817724291889
+66.8,Routing Request,,Machine 0,5.0,
+66.8,Routing Start,,Routing,5.0,SSPT
+66.8,Move to Machine,Job 14,Routing,4.0,5
+66.8,Get the Job,Job 14,Machine 0,,
+66.8,Setup,Job 14,Machine 0,,5
+67.26,Work Start,Job 22,Machine 2,,
+67.39,Created,Job 24,Source,,82.27154653318857
+67.39,Move to Routing,Job 24,Source,5.0,
+67.54,Work Finish,Job 8,Machine 3,,
+67.54,Completed,Job 8,Sink,,29.59326600714492
+67.54,Routing Request,,Machine 3,5.0,
+67.54,Routing Start,,Routing,5.0,SSPT
+67.54,Move to Machine,Job 24,Routing,4.0,2
+67.54,Get the Job,Job 24,Machine 3,,
+67.54,Setup,Job 24,Machine 3,,2
+69.54,Work Start,Job 24,Machine 3,,
+69.78,Work Finish,Job 20,Machine 1,,
+69.78,Completed,Job 20,Sink,,3.970250857228393
+69.78,Routing Request,,Machine 1,4.0,
+69.78,Routing Start,,Routing,4.0,SSPT
+69.78,Move to Machine,Job 19,Routing,3.0,2
+69.78,Get the Job,Job 19,Machine 1,,
+69.78,Setup,Job 19,Machine 1,,2
+71.27,Created,Job 25,Source,,84.16824979930611
+71.27,Move to Routing,Job 25,Source,4.0,
+71.78,Work Start,Job 19,Machine 1,,
+71.8,Work Start,Job 14,Machine 0,,
+72.99,Work Finish,Job 21,Machine 4,,
+72.99,Completed,Job 21,Sink,,4.695460913124322
+72.99,Routing Request,,Machine 4,4.0,
+72.99,Routing Start,,Routing,4.0,SSPT
+72.99,Move to Machine,Job 25,Routing,3.0,5
+72.99,Get the Job,Job 25,Machine 4,,
+72.99,Setup,Job 25,Machine 4,,5
+74.72,Created,Job 26,Source,,89.47309411388254
+74.72,Move to Routing,Job 26,Source,4.0,
+75.13,Created,Job 27,Source,,97.90876415940669
+75.13,Move to Routing,Job 27,Source,5.0,
+77.18,Created,Job 28,Source,,101.4532378770306
+77.18,Move to Routing,Job 28,Source,6.0,
+77.99,Work Start,Job 25,Machine 4,,
+78.78,Created,Job 29,Source,,94.83413702818655
+78.78,Move to Routing,Job 29,Source,7.0,
+78.82,Created,Job 30,Source,,98.52507497952826
+78.82,Move to Routing,Job 30,Source,8.0,
+81.05,Created,Job 31,Source,,94.65421803821654
+81.05,Move to Routing,Job 31,Source,9.0,
+81.46,Created,Job 32,Source,,97.57408018824597
+81.46,Move to Routing,Job 32,Source,10.0,
+81.77,Work Finish,Job 24,Machine 3,,
+81.77,Completed,Job 24,Sink,,0
+81.77,Routing Request,,Machine 3,10.0,
+81.77,Routing Start,,Routing,10.0,SSPT
+81.77,Move to Machine,Job 31,Routing,9.0,3
+81.77,Get the Job,Job 31,Machine 3,,
+81.77,Setup,Job 31,Machine 3,,3
+83.09,Created,Job 33,Source,,102.27628037168276
+83.09,Move to Routing,Job 33,Source,10.0,
+84.77,Work Start,Job 31,Machine 3,,
+85.22,Created,Job 34,Source,,97.67574942024522
+85.22,Move to Routing,Job 34,Source,11.0,
+85.55,Work Finish,Job 22,Machine 2,,
+85.55,Completed,Job 22,Sink,,7.2973135429374025
+85.55,Routing Request,,Machine 2,11.0,
+85.55,Routing Start,,Routing,11.0,SSPT
+85.55,Move to Machine,Job 34,Routing,10.0,2
+85.55,Get the Job,Job 34,Machine 2,,
+85.55,Setup,Job 34,Machine 2,,2
+87.47,Work Finish,Job 14,Machine 0,,
+87.47,Completed,Job 14,Sink,,33.216227105168194
+87.47,Routing Request,,Machine 0,10.0,
+87.47,Routing Start,,Routing,10.0,SSPT
+87.47,Move to Machine,Job 26,Routing,9.0,4
+87.47,Get the Job,Job 26,Machine 0,,
+87.47,Setup,Job 26,Machine 0,,4
+87.55,Work Start,Job 34,Machine 2,,
+87.61,Work Finish,Job 19,Machine 1,,
+87.61,Completed,Job 19,Sink,,19.696368187605145
+87.61,Routing Request,,Machine 1,9.0,
+87.61,Routing Start,,Routing,9.0,SSPT
+87.61,Move to Machine,Job 29,Routing,8.0,3
+87.61,Get the Job,Job 29,Machine 1,,
+87.61,Setup,Job 29,Machine 1,,3
+88.6,Work Finish,Job 25,Machine 4,,
+88.6,Completed,Job 25,Sink,,4.432959923363143
+88.6,Routing Request,,Machine 4,8.0,
+88.6,Routing Start,,Routing,8.0,SSPT
+88.6,Move to Machine,Job 32,Routing,7.0,3
+88.6,Get the Job,Job 32,Machine 4,,
+88.6,Setup,Job 32,Machine 4,,3
+89.29,Created,Job 35,Source,,106.48609260680908
+89.29,Move to Routing,Job 35,Source,8.0,
+90.18,Created,Job 36,Source,,102.62704099251437
+90.18,Move to Routing,Job 36,Source,9.0,
+90.61,Work Start,Job 29,Machine 1,,
+91.47,Work Start,Job 26,Machine 0,,
+91.6,Work Start,Job 32,Machine 4,,
+95.96,Work Finish,Job 31,Machine 3,,
+95.96,Completed,Job 31,Sink,,1.3044599099867895
+95.96,Routing Request,,Machine 3,9.0,
+95.96,Routing Start,,Routing,9.0,SSPT
+95.96,Move to Machine,Job 36,Routing,8.0,3
+95.96,Get the Job,Job 36,Machine 3,,
+95.96,Setup,Job 36,Machine 3,,3
+97.79,Work Finish,Job 34,Machine 2,,
+97.79,Completed,Job 34,Sink,,0.11894074716434488
+97.79,Routing Request,,Machine 2,8.0,
+97.79,Routing Start,,Routing,8.0,SSPT
+97.79,Move to Machine,Job 35,Routing,7.0,2
+97.79,Get the Job,Job 35,Machine 2,,
+97.79,Setup,Job 35,Machine 2,,2
+98.96,Work Start,Job 36,Machine 3,,
+99.79,Work Start,Job 35,Machine 2,,
+102.83,Created,Job 37,Source,,115.88561906718384
+102.83,Move to Routing,Job 37,Source,8.0,
+103.16,Created,Job 38,Source,,124.56288352871412
+103.16,Move to Routing,Job 38,Source,9.0,
+103.6,Work Finish,Job 26,Machine 0,,
+103.6,Completed,Job 26,Sink,,14.126742595054779
+103.6,Routing Request,,Machine 0,9.0,
+103.6,Routing Start,,Routing,9.0,SSPT
+103.6,Move to Machine,Job 37,Routing,8.0,4
+103.6,Get the Job,Job 37,Machine 0,,
+103.6,Setup,Job 37,Machine 0,,4
+103.81,Work Finish,Job 29,Machine 1,,
+103.81,Completed,Job 29,Sink,,8.97312493376559
+103.81,Routing Request,,Machine 1,8.0,
+103.81,Routing Start,,Routing,8.0,SSPT
+103.81,Move to Machine,Job 33,Routing,7.0,3
+103.81,Get the Job,Job 33,Machine 1,,
+103.81,Setup,Job 33,Machine 1,,3
+103.96,Created,Job 39,Source,,125.82088944080687
+103.96,Move to Routing,Job 39,Source,8.0,
+104.85,Work Finish,Job 32,Machine 4,,
+104.85,Completed,Job 32,Sink,,7.274955342030296
+104.85,Routing Request,,Machine 4,8.0,
+104.85,Routing Start,,Routing,8.0,SSPT
+104.85,Move to Machine,Job 23,Routing,7.0,4
+104.85,Get the Job,Job 23,Machine 4,,
+104.85,Setup,Job 23,Machine 4,,4
+106.81,Work Start,Job 33,Machine 1,,
+107.6,Work Start,Job 37,Machine 0,,
+108.85,Work Start,Job 23,Machine 4,,
+109.19,Work Finish,Job 36,Machine 3,,
+109.19,Completed,Job 36,Sink,,6.56506677799365
+109.19,Routing Request,,Machine 3,7.0,
+109.19,Routing Start,,Routing,7.0,SSPT
+109.19,Move to Machine,Job 30,Routing,6.0,4
+109.19,Get the Job,Job 30,Machine 3,,
+109.19,Setup,Job 30,Machine 3,,4
+109.57,Created,Job 40,Source,,131.3165079154606
+109.57,Move to Routing,Job 40,Source,7.0,
+111.28,Created,Job 41,Source,,127.33942300437873
+111.28,Move to Routing,Job 41,Source,8.0,
+111.85,Created,Job 42,Source,,132.25340892380092
+111.85,Move to Routing,Job 42,Source,9.0,
+112.15,Created,Job 43,Source,,129.11880048427878
+112.15,Move to Routing,Job 43,Source,10.0,
+113.19,Work Start,Job 30,Machine 3,,
+113.93,Work Finish,Job 35,Machine 2,,
+113.93,Completed,Job 35,Sink,,7.444166696175614
+113.93,Routing Request,,Machine 2,10.0,
+113.93,Routing Start,,Routing,10.0,SSPT
+113.93,Move to Machine,Job 41,Routing,9.0,3
+113.93,Get the Job,Job 41,Machine 2,,
+113.93,Setup,Job 41,Machine 2,,3
+114.0,Created,Job 44,Source,,136.2272656449302
+114.0,Move to Routing,Job 44,Source,10.0,
+115.31,Created,Job 45,Source,,129.02364472952246
+115.31,Move to Routing,Job 45,Source,11.0,
+116.93,Work Start,Job 41,Machine 2,,
+117.97,Created,Job 46,Source,,140.82050156291945
+117.97,Move to Routing,Job 46,Source,12.0,
+118.34,Work Finish,Job 37,Machine 0,,
+118.34,Completed,Job 37,Sink,,2.4503540430285256
+118.34,Routing Request,,Machine 0,12.0,
+118.34,Routing Start,,Routing,12.0,SSPT
+118.34,Move to Machine,Job 45,Routing,11.0,2
+118.34,Get the Job,Job 45,Machine 0,,
+118.34,Setup,Job 45,Machine 0,,2
+120.34,Work Start,Job 45,Machine 0,,
+122.58,Work Finish,Job 33,Machine 1,,
+122.58,Completed,Job 33,Sink,,20.302933210444564
+122.58,Routing Request,,Machine 1,11.0,
+122.58,Routing Start,,Routing,11.0,SSPT
+122.58,Move to Machine,Job 43,Routing,10.0,5
+122.58,Get the Job,Job 43,Machine 1,,
+122.58,Setup,Job 43,Machine 1,,5
+123.81,Work Finish,Job 23,Machine 4,,
+123.81,Completed,Job 23,Sink,,43.27901538106515
+123.81,Routing Request,,Machine 4,10.0,
+123.81,Routing Start,,Routing,10.0,SSPT
+123.81,Move to Machine,Job 38,Routing,9.0,2
+123.81,Get the Job,Job 38,Machine 4,,
+123.81,Setup,Job 38,Machine 4,,2
+125.81,Work Start,Job 38,Machine 4,,
+126.88,Created,Job 47,Source,,148.907644969923
+126.88,Move to Routing,Job 47,Source,10.0,
+127.58,Work Start,Job 43,Machine 1,,
+129.04,Created,Job 48,Source,,144.79838200342402
+129.04,Move to Routing,Job 48,Source,11.0,
+129.4,Work Finish,Job 30,Machine 3,,
+129.4,Completed,Job 30,Sink,,30.870430077380576
+129.4,Routing Request,,Machine 3,11.0,
+129.4,Routing Start,,Routing,11.0,SSPT
+129.4,Move to Machine,Job 48,Routing,10.0,3
+129.4,Get the Job,Job 48,Machine 3,,
+129.4,Setup,Job 48,Machine 3,,3
+130.13,Work Finish,Job 41,Machine 2,,
+130.13,Completed,Job 41,Sink,,2.7934231731510835
+130.13,Routing Request,,Machine 2,10.0,
+130.13,Routing Start,,Routing,10.0,SSPT
+130.13,Move to Machine,Job 42,Routing,9.0,3
+130.13,Get the Job,Job 42,Machine 2,,
+130.13,Setup,Job 42,Machine 2,,3
+131.61,Work Finish,Job 45,Machine 0,,
+131.61,Completed,Job 45,Sink,,2.5882481581108436
+131.61,Routing Request,,Machine 0,9.0,
+131.61,Routing Start,,Routing,9.0,SSPT
+131.61,Move to Machine,Job 44,Routing,8.0,2
+131.61,Get the Job,Job 44,Machine 0,,
+131.61,Setup,Job 44,Machine 0,,2
+132.05,Created,Job 49,Source,,149.52232957689964
+132.05,Move to Routing,Job 49,Source,9.0,
+132.4,Work Start,Job 48,Machine 3,,
+133.13,Work Start,Job 42,Machine 2,,
+133.61,Work Start,Job 44,Machine 0,,
+135.11,Created,Job 50,Source,,153.55471070257744
+135.11,Move to Routing,Job 50,Source,10.0,
+135.67,Created,Job 51,Source,,153.88266960503745
+135.67,Move to Routing,Job 51,Source,11.0,
+140.06,Created,Job 52,Source,,152.4030366296099
+140.06,Move to Routing,Job 52,Source,12.0,
+140.89,Created,Job 53,Source,,158.87377239362226
+140.89,Move to Routing,Job 53,Source,13.0,
+141.1,Created,Job 54,Source,,163.7601087960035
+141.1,Move to Routing,Job 54,Source,14.0,
+141.53,Work Finish,Job 43,Machine 1,,
+141.53,Completed,Job 43,Sink,,12.41055491441631
+141.53,Routing Request,,Machine 1,14.0,
+141.53,Routing Start,,Routing,14.0,SSPT
+141.53,Move to Machine,Job 52,Routing,13.0,6
+141.53,Get the Job,Job 52,Machine 1,,
+141.53,Setup,Job 52,Machine 1,,6
+141.67,Created,Job 55,Source,,159.46336148246604
+141.67,Move to Routing,Job 55,Source,14.0,
+143.4,Work Finish,Job 38,Machine 4,,
+143.4,Completed,Job 38,Sink,,18.837618946817784
+143.4,Routing Request,,Machine 4,14.0,
+143.4,Routing Start,,Routing,14.0,SSPT
+143.4,Move to Machine,Job 49,Routing,13.0,2
+143.4,Get the Job,Job 49,Machine 4,,
+143.4,Setup,Job 49,Machine 4,,2
+145.35,Work Finish,Job 48,Machine 3,,
+145.35,Completed,Job 48,Sink,,0.5482546621088318
+145.35,Routing Request,,Machine 3,13.0,
+145.35,Routing Start,,Routing,13.0,SSPT
+145.35,Move to Machine,Job 55,Routing,12.0,3
+145.35,Get the Job,Job 55,Machine 3,,
+145.35,Setup,Job 55,Machine 3,,3
+145.4,Work Start,Job 49,Machine 4,,
+145.68,Created,Job 56,Source,,167.92915865419334
+145.68,Move to Routing,Job 56,Source,13.0,
+146.05,Created,Job 57,Source,,169.05534942122375
+146.05,Move to Routing,Job 57,Source,14.0,
+147.53,Work Start,Job 52,Machine 1,,
+148.35,Work Start,Job 55,Machine 3,,
+149.91,Work Finish,Job 42,Machine 2,,
+149.91,Completed,Job 42,Sink,,17.655377171520172
+149.91,Routing Request,,Machine 2,14.0,
+149.91,Routing Start,,Routing,14.0,SSPT
+149.91,Move to Machine,Job 51,Routing,13.0,3
+149.91,Get the Job,Job 51,Machine 2,,
+149.91,Setup,Job 51,Machine 2,,3
+150.56,Created,Job 58,Source,,164.7210948477903
+150.56,Move to Routing,Job 58,Source,14.0,
+151.37,Created,Job 59,Source,,165.18465391628897
+151.37,Move to Routing,Job 59,Source,15.0,
+151.88,Work Finish,Job 44,Machine 0,,
+151.88,Completed,Job 44,Sink,,15.654981925000357
+151.88,Routing Request,,Machine 0,15.0,
+151.88,Routing Start,,Routing,15.0,SSPT
+151.88,Move to Machine,Job 59,Routing,14.0,2
+151.88,Get the Job,Job 59,Machine 0,,
+151.88,Setup,Job 59,Machine 0,,2
+152.03,Created,Job 60,Source,,171.5785941932011
+152.03,Move to Routing,Job 60,Source,15.0,
+152.78,Created,Job 61,Source,,171.79602462597938
+152.78,Move to Routing,Job 61,Source,16.0,
+152.91,Work Start,Job 51,Machine 2,,
+153.88,Work Start,Job 59,Machine 0,,
+156.79,Created,Job 62,Source,,172.4532683700605
+156.79,Move to Routing,Job 62,Source,17.0,
+157.67,Work Finish,Job 52,Machine 1,,
+157.67,Completed,Job 52,Sink,,5.271762388915505
+157.67,Routing Request,,Machine 1,17.0,
+157.67,Routing Start,,Routing,17.0,SSPT
+157.67,Move to Machine,Job 58,Routing,16.0,5
+157.67,Get the Job,Job 58,Machine 1,,
+157.67,Setup,Job 58,Machine 1,,5
+158.33,Created,Job 63,Source,,179.75392542774236
+158.33,Move to Routing,Job 63,Source,17.0,
+159.76,Work Finish,Job 49,Machine 4,,
+159.76,Completed,Job 49,Sink,,10.240501052515555
+159.76,Routing Request,,Machine 4,17.0,
+159.76,Routing Start,,Routing,17.0,SSPT
+159.76,Move to Machine,Job 62,Routing,16.0,4
+159.76,Get the Job,Job 62,Machine 4,,
+159.76,Setup,Job 62,Machine 4,,4
+162.67,Work Start,Job 58,Machine 1,,
+162.97,Work Finish,Job 55,Machine 3,,
+162.97,Completed,Job 55,Sink,,3.5107799249338143
+162.97,Routing Request,,Machine 3,16.0,
+162.97,Routing Start,,Routing,16.0,SSPT
+162.97,Move to Machine,Job 50,Routing,15.0,2
+162.97,Get the Job,Job 50,Machine 3,,
+162.97,Setup,Job 50,Machine 3,,2
+163.48,Created,Job 64,Source,,180.4089209044396
+163.48,Move to Routing,Job 64,Source,16.0,
+163.76,Work Start,Job 62,Machine 4,,
+163.84,Created,Job 65,Source,,178.69635277833856
+163.84,Move to Routing,Job 65,Source,17.0,
+164.97,Work Start,Job 50,Machine 3,,
+165.24,Work Finish,Job 59,Machine 0,,
+165.24,Completed,Job 59,Sink,,0.05794461636349979
+165.24,Routing Request,,Machine 0,17.0,
+165.24,Routing Start,,Routing,17.0,SSPT
+165.24,Move to Machine,Job 65,Routing,16.0,5
+165.24,Get the Job,Job 65,Machine 0,,
+165.24,Setup,Job 65,Machine 0,,5
+165.64,Created,Job 66,Source,,189.62786568909388
+165.64,Move to Routing,Job 66,Source,17.0,
+167.65,Created,Job 67,Source,,188.41292779346034
+167.65,Move to Routing,Job 67,Source,18.0,
+167.88,Work Finish,Job 51,Machine 2,,
+167.88,Completed,Job 51,Sink,,13.996934345391537
+167.88,Routing Request,,Machine 2,18.0,
+167.88,Routing Start,,Routing,18.0,SSPT
+167.88,Move to Machine,Job 64,Routing,17.0,3
+167.88,Get the Job,Job 64,Machine 2,,
+167.88,Setup,Job 64,Machine 2,,3
+169.39,Created,Job 68,Source,,193.41364443506671
+169.39,Move to Routing,Job 68,Source,18.0,
+170.13,Created,Job 69,Source,,192.51212728023896
+170.13,Move to Routing,Job 69,Source,19.0,
+170.24,Work Start,Job 65,Machine 0,,
+170.45,Created,Job 70,Source,,194.01285910421996
+170.45,Move to Routing,Job 70,Source,20.0,
+170.88,Work Start,Job 64,Machine 2,,
+172.15,Created,Job 71,Source,,195.39722141894327
+172.15,Move to Routing,Job 71,Source,21.0,
+172.23,Created,Job 72,Source,,191.29137407199164
+172.23,Move to Routing,Job 72,Source,22.0,
+174.32,Work Finish,Job 58,Machine 1,,
+174.32,Completed,Job 58,Sink,,9.59435162510789
+174.32,Routing Request,,Machine 1,22.0,
+174.32,Routing Start,,Routing,22.0,SSPT
+174.32,Move to Machine,Job 53,Routing,21.0,4
+174.32,Get the Job,Job 53,Machine 1,,
+174.32,Setup,Job 53,Machine 1,,4
+174.76,Created,Job 73,Source,,193.71806342667801
+174.76,Move to Routing,Job 73,Source,22.0,
+174.78,Created,Job 74,Source,,194.85943128497644
+174.78,Move to Routing,Job 74,Source,23.0,
+176.24,Created,Job 75,Source,,198.66168961331587
+176.24,Move to Routing,Job 75,Source,24.0,
+176.64,Work Finish,Job 62,Machine 4,,
+176.64,Completed,Job 62,Sink,,4.184009304947892
+176.64,Routing Request,,Machine 4,24.0,
+176.64,Routing Start,,Routing,24.0,SSPT
+176.64,Move to Machine,Job 74,Routing,23.0,2
+176.64,Get the Job,Job 74,Machine 4,,
+176.64,Setup,Job 74,Machine 4,,2
+178.32,Work Start,Job 53,Machine 1,,
+178.64,Work Start,Job 74,Machine 4,,
+178.71,Created,Job 76,Source,,199.99471090894545
+178.71,Move to Routing,Job 76,Source,24.0,
+180.13,Work Finish,Job 50,Machine 3,,
+180.13,Completed,Job 50,Sink,,26.580175636734623
+180.13,Routing Request,,Machine 3,24.0,
+180.13,Routing Start,,Routing,24.0,SSPT
+180.13,Move to Machine,Job 73,Routing,23.0,2
+180.13,Get the Job,Job 73,Machine 3,,
+180.13,Setup,Job 73,Machine 3,,2
+182.13,Work Start,Job 73,Machine 3,,
+182.46,Work Finish,Job 65,Machine 0,,
+182.46,Completed,Job 65,Sink,,3.759928297914456
+182.46,Routing Request,,Machine 0,23.0,
+182.46,Routing Start,,Routing,23.0,SSPT
+182.46,Move to Machine,Job 40,Routing,22.0,2
+182.46,Get the Job,Job 40,Machine 0,,
+182.46,Setup,Job 40,Machine 0,,2
+184.06,Created,Job 77,Source,,197.22410941201048
+184.06,Move to Routing,Job 77,Source,23.0,
+184.46,Work Start,Job 40,Machine 0,,
+184.79,Work Finish,Job 64,Machine 2,,
+184.79,Completed,Job 64,Sink,,4.385364201611935
+184.79,Routing Request,,Machine 2,23.0,
+184.79,Routing Start,,Routing,23.0,SSPT
+184.79,Move to Machine,Job 77,Routing,22.0,5
+184.79,Get the Job,Job 77,Machine 2,,
+184.79,Setup,Job 77,Machine 2,,5
+185.46,Created,Job 78,Source,,208.50652980684302
+185.46,Move to Routing,Job 78,Source,23.0,
+186.88,Created,Job 79,Source,,205.92797508557138
+186.88,Move to Routing,Job 79,Source,24.0,
+187.06,Created,Job 80,Source,,211.23655622805137
+187.06,Move to Routing,Job 80,Source,25.0,
+187.18,Created,Job 81,Source,,207.3756510585342
+187.18,Move to Routing,Job 81,Source,26.0,
+187.21,Created,Job 82,Source,,199.54002444590003
+187.21,Move to Routing,Job 82,Source,27.0,
+188.87,Created,Job 83,Source,,201.92625362127106
+188.87,Move to Routing,Job 83,Source,28.0,
+189.79,Work Start,Job 77,Machine 2,,
+190.37,Created,Job 84,Source,,206.3980514190625
+190.37,Move to Routing,Job 84,Source,29.0,
+193.1,Work Finish,Job 53,Machine 1,,
+193.1,Completed,Job 53,Sink,,34.228804449215005
+193.1,Routing Request,,Machine 1,29.0,
+193.1,Routing Start,,Routing,29.0,SSPT
+193.1,Move to Machine,Job 82,Routing,28.0,2
+193.1,Get the Job,Job 82,Machine 1,,
+193.1,Setup,Job 82,Machine 1,,2
+194.89,Created,Job 85,Source,,212.53522994403116
+194.89,Move to Routing,Job 85,Source,29.0,
+195.1,Work Start,Job 82,Machine 1,,
+195.15,Work Finish,Job 74,Machine 4,,
+195.15,Completed,Job 74,Sink,,0.28767961731401215
+195.15,Routing Request,,Machine 4,29.0,
+195.15,Routing Start,,Routing,29.0,SSPT
+195.15,Move to Machine,Job 83,Routing,28.0,4
+195.15,Get the Job,Job 83,Machine 4,,
+195.15,Setup,Job 83,Machine 4,,4
+196.47,Created,Job 86,Source,,220.57509348013758
+196.47,Move to Routing,Job 86,Source,29.0,
+197.72,Work Finish,Job 73,Machine 3,,
+197.72,Completed,Job 73,Sink,,4.006373726626975
+197.72,Routing Request,,Machine 3,29.0,
+197.72,Routing Start,,Routing,29.0,SSPT
+197.72,Move to Machine,Job 84,Routing,28.0,6
+197.72,Get the Job,Job 84,Machine 3,,
+197.72,Setup,Job 84,Machine 3,,6
+198.48,Created,Job 87,Source,,220.301364816211
+198.48,Move to Routing,Job 87,Source,29.0,
+199.15,Work Start,Job 83,Machine 4,,
+199.93,Created,Job 88,Source,,217.13625066264925
+199.93,Move to Routing,Job 88,Source,30.0,
+200.62,Work Finish,Job 77,Machine 2,,
+200.62,Completed,Job 77,Sink,,3.3942059743126265
+200.62,Routing Request,,Machine 2,30.0,
+200.62,Routing Start,,Routing,30.0,SSPT
+200.62,Move to Machine,Job 85,Routing,29.0,2
+200.62,Get the Job,Job 85,Machine 2,,
+200.62,Setup,Job 85,Machine 2,,2
+201.08,Created,Job 89,Source,,218.36537475795453
+201.08,Move to Routing,Job 89,Source,30.0,
+202.33,Work Finish,Job 40,Machine 0,,
+202.33,Completed,Job 40,Sink,,71.0153383382978
+202.33,Routing Request,,Machine 0,30.0,
+202.33,Routing Start,,Routing,30.0,SSPT
+202.33,Move to Machine,Job 88,Routing,29.0,4
+202.33,Get the Job,Job 88,Machine 0,,
+202.33,Setup,Job 88,Machine 0,,4
+202.62,Work Start,Job 85,Machine 2,,
+203.72,Work Start,Job 84,Machine 3,,
+205.24,Work Finish,Job 82,Machine 1,,
+205.24,Completed,Job 82,Sink,,5.702212682197285
+205.24,Routing Request,,Machine 1,29.0,
+205.24,Routing Start,,Routing,29.0,SSPT
+205.24,Move to Machine,Job 87,Routing,28.0,2
+205.24,Get the Job,Job 87,Machine 1,,
+205.24,Setup,Job 87,Machine 1,,2
+206.33,Work Start,Job 88,Machine 0,,
+207.24,Work Start,Job 87,Machine 1,,
+209.88,Work Finish,Job 83,Machine 4,,
+209.88,Completed,Job 83,Sink,,7.951610454752057
+209.88,Routing Request,,Machine 4,28.0,
+209.88,Routing Start,,Routing,28.0,SSPT
+209.88,Move to Machine,Job 89,Routing,27.0,5
+209.88,Get the Job,Job 89,Machine 4,,
+209.88,Setup,Job 89,Machine 4,,5
+210.11,Created,Job 90,Source,,234.21304300556213
+210.11,Move to Routing,Job 90,Source,28.0,
+211.06,Created,Job 91,Source,,225.54241487428934
+211.06,Move to Routing,Job 91,Source,29.0,
+212.93,Created,Job 92,Source,,228.55190499104327
+212.93,Move to Routing,Job 92,Source,30.0,
+214.88,Work Start,Job 89,Machine 4,,
+216.9,Work Finish,Job 84,Machine 3,,
+216.9,Completed,Job 84,Sink,,10.500100953731476
+216.9,Routing Request,,Machine 3,30.0,
+216.9,Routing Start,,Routing,30.0,SSPT
+216.9,Move to Machine,Job 91,Routing,29.0,3
+216.9,Get the Job,Job 91,Machine 3,,
+216.9,Setup,Job 91,Machine 3,,3
+216.94,Created,Job 93,Source,,234.63283473861287
+216.94,Move to Routing,Job 93,Source,30.0,
+217.13,Work Finish,Job 85,Machine 2,,
+217.13,Completed,Job 85,Sink,,4.59015644089871
+217.13,Routing Request,,Machine 2,30.0,
+217.13,Routing Start,,Routing,30.0,SSPT
+217.13,Move to Machine,Job 93,Routing,29.0,3
+217.13,Get the Job,Job 93,Machine 2,,
+217.13,Setup,Job 93,Machine 2,,3
+218.04,Created,Job 94,Source,,232.04163597446876
+218.04,Move to Routing,Job 94,Source,30.0,
+219.9,Work Start,Job 91,Machine 3,,
+220.13,Work Start,Job 93,Machine 2,,
+220.47,Work Finish,Job 88,Machine 0,,
+220.47,Completed,Job 88,Sink,,3.337127747834785
+220.47,Routing Request,,Machine 0,30.0,
+220.47,Routing Start,,Routing,30.0,SSPT
+220.47,Move to Machine,Job 94,Routing,29.0,3
+220.47,Get the Job,Job 94,Machine 0,,
+220.47,Setup,Job 94,Machine 0,,3
+223.47,Work Start,Job 94,Machine 0,,
+225.18,Work Finish,Job 87,Machine 1,,
+225.18,Completed,Job 87,Sink,,4.8807824559887365
+225.18,Routing Request,,Machine 1,29.0,
+225.18,Routing Start,,Routing,29.0,SSPT
+225.18,Move to Machine,Job 92,Routing,28.0,2
+225.18,Get the Job,Job 92,Machine 1,,
+225.18,Setup,Job 92,Machine 1,,2
+227.18,Work Start,Job 92,Machine 1,,
+229.09,Work Finish,Job 89,Machine 4,,
+229.09,Completed,Job 89,Sink,,10.726717619211257
+229.09,Routing Request,,Machine 4,28.0,
+229.09,Routing Start,,Routing,28.0,SSPT
+229.09,Move to Machine,Job 79,Routing,27.0,2
+229.09,Get the Job,Job 79,Machine 4,,
+229.09,Setup,Job 79,Machine 4,,2
+231.09,Work Start,Job 79,Machine 4,,
+231.8,Work Finish,Job 91,Machine 3,,
+231.8,Completed,Job 91,Sink,,6.261416873761874
+231.8,Routing Request,,Machine 3,27.0,
+231.8,Routing Start,,Routing,27.0,SSPT
+231.8,Move to Machine,Job 72,Routing,26.0,2
+231.8,Get the Job,Job 72,Machine 3,,
+231.8,Setup,Job 72,Machine 3,,2
+233.8,Work Start,Job 72,Machine 3,,
+234.67,Work Finish,Job 93,Machine 2,,
+234.67,Completed,Job 93,Sink,,0.037756621648384225
+234.67,Routing Request,,Machine 2,26.0,
+234.67,Routing Start,,Routing,26.0,SSPT
+234.67,Move to Machine,Job 61,Routing,25.0,3
+234.67,Get the Job,Job 61,Machine 2,,
+234.67,Setup,Job 61,Machine 2,,3
+234.99,Work Finish,Job 94,Machine 0,,
+234.99,Completed,Job 94,Sink,,2.9449622558333886
+234.99,Routing Request,,Machine 0,25.0,
+234.99,Routing Start,,Routing,25.0,SSPT
+234.99,Move to Machine,Job 76,Routing,24.0,2
+234.99,Get the Job,Job 76,Machine 0,,
+234.99,Setup,Job 76,Machine 0,,2
+235.14,Created,Job 95,Source,,253.191853405715
+235.14,Move to Routing,Job 95,Source,25.0,
+236.99,Work Start,Job 76,Machine 0,,
+237.67,Work Start,Job 61,Machine 2,,
+240.03,Work Finish,Job 92,Machine 1,,
+240.03,Completed,Job 92,Sink,,11.47598100774863
+240.03,Routing Request,,Machine 1,25.0,
+240.03,Routing Start,,Routing,25.0,SSPT
+240.03,Move to Machine,Job 95,Routing,24.0,5
+240.03,Get the Job,Job 95,Machine 1,,
+240.03,Setup,Job 95,Machine 1,,5
+245.03,Work Start,Job 95,Machine 1,,
+245.19,Created,Job 96,Source,,261.7238526545171
+245.19,Move to Routing,Job 96,Source,25.0,
+246.59,Created,Job 97,Source,,262.17342683359254
+246.59,Move to Routing,Job 97,Source,26.0,
+246.75,Work Finish,Job 79,Machine 4,,
+246.75,Completed,Job 79,Sink,,40.820375765476115
+246.75,Routing Request,,Machine 4,26.0,
+246.75,Routing Start,,Routing,26.0,SSPT
+246.75,Move to Machine,Job 96,Routing,25.0,2
+246.75,Get the Job,Job 96,Machine 4,,
+246.75,Setup,Job 96,Machine 4,,2
+248.75,Work Start,Job 96,Machine 4,,
+249.48,Work Finish,Job 72,Machine 3,,
+249.48,Completed,Job 72,Sink,,58.18454754872988
+249.48,Routing Request,,Machine 3,25.0,
+249.48,Routing Start,,Routing,25.0,SSPT
+249.48,Move to Machine,Job 97,Routing,24.0,3
+249.48,Get the Job,Job 97,Machine 3,,
+249.48,Setup,Job 97,Machine 3,,3
+250.88,Created,Job 98,Source,,265.2462762603201
+250.88,Move to Routing,Job 98,Source,25.0,
+251.88,Created,Job 99,Source,,274.95475387077806
+251.88,Move to Routing,Job 99,Source,26.0,
+252.48,Work Start,Job 97,Machine 3,,
+253.3,Work Finish,Job 61,Machine 2,,
+253.3,Completed,Job 61,Sink,,81.50421724760719
+253.3,Routing Request,,Machine 2,26.0,
+253.3,Routing Start,,Routing,26.0,SSPT
+253.3,Move to Machine,Job 98,Routing,25.0,3
+253.3,Get the Job,Job 98,Machine 2,,
+253.3,Setup,Job 98,Machine 2,,3
+254.48,Work Finish,Job 76,Machine 0,,
+254.48,Completed,Job 76,Sink,,54.48827524873039
+254.48,Routing Request,,Machine 0,25.0,
+254.48,Routing Start,,Routing,25.0,SSPT
+254.48,Move to Machine,Job 69,Routing,24.0,2
+254.48,Get the Job,Job 69,Machine 0,,
+254.48,Setup,Job 69,Machine 0,,2
+256.3,Work Start,Job 98,Machine 2,,
+256.48,Work Start,Job 69,Machine 0,,
+259.87,Work Finish,Job 95,Machine 1,,
+259.87,Completed,Job 95,Sink,,6.679689692035538
+259.87,Routing Request,,Machine 1,24.0,
+259.87,Routing Start,,Routing,24.0,SSPT
+259.87,Move to Machine,Job 60,Routing,23.0,4
+259.87,Get the Job,Job 60,Machine 1,,
+259.87,Setup,Job 60,Machine 1,,4
+262.34,Work Finish,Job 96,Machine 4,,
+262.34,Completed,Job 96,Sink,,0.6192634926478036
+262.34,Routing Request,,Machine 4,23.0,
+262.34,Routing Start,,Routing,23.0,SSPT
+262.34,Move to Machine,Job 81,Routing,22.0,3
+262.34,Get the Job,Job 81,Machine 4,,
+262.34,Setup,Job 81,Machine 4,,3
+263.87,Work Start,Job 60,Machine 1,,
+265.28,Work Finish,Job 97,Machine 3,,
+265.28,Completed,Job 97,Sink,,3.109952818872955
+265.28,Routing Request,,Machine 3,22.0,
+265.28,Routing Start,,Routing,22.0,SSPT
+265.28,Move to Machine,Job 67,Routing,21.0,2
+265.28,Get the Job,Job 67,Machine 3,,
+265.28,Setup,Job 67,Machine 3,,2
+265.34,Work Start,Job 81,Machine 4,,
+267.28,Work Start,Job 67,Machine 3,,
+268.11,Work Finish,Job 98,Machine 2,,
+268.11,Completed,Job 98,Sink,,2.8649908732948006
+268.11,Routing Request,,Machine 2,21.0,
+268.11,Routing Start,,Routing,21.0,SSPT
+268.11,Move to Machine,Job 63,Routing,20.0,3
+268.11,Get the Job,Job 63,Machine 2,,
+268.11,Setup,Job 63,Machine 2,,3
+271.11,Work Start,Job 63,Machine 2,,
+274.89,Work Finish,Job 69,Machine 0,,
+274.89,Completed,Job 69,Sink,,82.37300235957136
+274.89,Routing Request,,Machine 0,20.0,
+274.89,Routing Start,,Routing,20.0,SSPT
+274.89,Move to Machine,Job 46,Routing,19.0,2
+274.89,Get the Job,Job 46,Machine 0,,
+274.89,Setup,Job 46,Machine 0,,2
+276.89,Work Start,Job 46,Machine 0,,
+279.94,Work Finish,Job 60,Machine 1,,
+279.94,Completed,Job 60,Sink,,108.3641974217264
+279.94,Routing Request,,Machine 1,19.0,
+279.94,Routing Start,,Routing,19.0,SSPT
+279.94,Move to Machine,Job 56,Routing,18.0,2
+279.94,Get the Job,Job 56,Machine 1,,
+279.94,Setup,Job 56,Machine 1,,2
+281.94,Work Finish,Job 81,Machine 4,,
+281.94,Completed,Job 81,Sink,,74.5666774544766
+281.94,Routing Request,,Machine 4,18.0,
+281.94,Routing Start,,Routing,18.0,SSPT
+281.94,Move to Machine,Job 75,Routing,17.0,2
+281.94,Get the Job,Job 75,Machine 4,,
+281.94,Setup,Job 75,Machine 4,,2
+281.94,Work Start,Job 56,Machine 1,,
+283.94,Work Start,Job 75,Machine 4,,
+284.35,Work Finish,Job 67,Machine 3,,
+284.35,Completed,Job 67,Sink,,95.94136727039111
+284.35,Routing Request,,Machine 3,17.0,
+284.35,Routing Start,,Routing,17.0,SSPT
+284.35,Move to Machine,Job 57,Routing,16.0,2
+284.35,Get the Job,Job 57,Machine 3,,
+284.35,Setup,Job 57,Machine 3,,2
+286.35,Work Start,Job 57,Machine 3,,
+288.73,Work Finish,Job 63,Machine 2,,
+288.73,Completed,Job 63,Sink,,108.97196734949844
+288.73,Routing Request,,Machine 2,16.0,
+288.73,Routing Start,,Routing,16.0,SSPT
+288.73,Move to Machine,Job 78,Routing,15.0,3
+288.73,Get the Job,Job 78,Machine 2,,
+288.73,Setup,Job 78,Machine 2,,3
+291.73,Work Start,Job 78,Machine 2,,
+295.67,Work Finish,Job 46,Machine 0,,
+295.67,Completed,Job 46,Sink,,154.85074081720643
+295.67,Routing Request,,Machine 0,15.0,
+295.67,Routing Start,,Routing,15.0,SSPT
+295.67,Move to Machine,Job 47,Routing,14.0,3
+295.67,Get the Job,Job 47,Machine 0,,
+295.67,Setup,Job 47,Machine 0,,3
+298.67,Work Start,Job 47,Machine 0,,
+300.23,Work Finish,Job 56,Machine 1,,
+300.23,Completed,Job 56,Sink,,132.3015387725754
+300.23,Routing Request,,Machine 1,14.0,
+300.23,Routing Start,,Routing,14.0,SSPT
+300.23,Move to Machine,Job 15,Routing,13.0,4
+300.23,Get the Job,Job 15,Machine 1,,
+300.23,Setup,Job 15,Machine 1,,4
+302.38,Work Finish,Job 75,Machine 4,,
+302.38,Completed,Job 75,Sink,,103.7157634428311
+302.38,Routing Request,,Machine 4,13.0,
+302.38,Routing Start,,Routing,13.0,SSPT
+302.38,Move to Machine,Job 71,Routing,12.0,4
+302.38,Get the Job,Job 71,Machine 4,,
+302.38,Setup,Job 71,Machine 4,,4
+304.23,Work Start,Job 15,Machine 1,,
+305.27,Work Finish,Job 57,Machine 3,,
+305.27,Completed,Job 57,Sink,,136.21163269950085
+305.27,Routing Request,,Machine 3,12.0,
+305.27,Routing Start,,Routing,12.0,SSPT
+305.27,Move to Machine,Job 90,Routing,11.0,4
+305.27,Get the Job,Job 90,Machine 3,,
+305.27,Setup,Job 90,Machine 3,,4
+306.38,Work Start,Job 71,Machine 4,,
+309.27,Work Start,Job 90,Machine 3,,
+310.67,Work Finish,Job 78,Machine 2,,
+310.67,Completed,Job 78,Sink,,102.16539396662202
+310.67,Routing Request,,Machine 2,11.0,
+310.67,Routing Start,,Routing,11.0,SSPT
+310.67,Move to Machine,Job 54,Routing,10.0,5
+310.67,Get the Job,Job 54,Machine 2,,
+310.67,Setup,Job 54,Machine 2,,5
+315.67,Work Start,Job 54,Machine 2,,
+316.78,Work Finish,Job 47,Machine 0,,
+316.78,Completed,Job 47,Sink,,167.87118304543338
+316.78,Routing Request,,Machine 0,10.0,
+316.78,Routing Start,,Routing,10.0,SSPT
+316.78,Move to Machine,Job 66,Routing,9.0,3
+316.78,Get the Job,Job 66,Machine 0,,
+316.78,Setup,Job 66,Machine 0,,3
+319.78,Work Start,Job 66,Machine 0,,
+322.84,Work Finish,Job 15,Machine 1,,
+322.84,Completed,Job 15,Sink,,258.1768757040753
+322.84,Routing Request,,Machine 1,9.0,
+322.84,Routing Start,,Routing,9.0,SSPT
+322.84,Move to Machine,Job 27,Routing,8.0,4
+322.84,Get the Job,Job 27,Machine 1,,
+322.84,Setup,Job 27,Machine 1,,4
+325.49,Work Finish,Job 71,Machine 4,,
+325.49,Completed,Job 71,Sink,,130.0899639037338
+325.49,Routing Request,,Machine 4,8.0,
+325.49,Routing Start,,Routing,8.0,SSPT
+325.49,Move to Machine,Job 80,Routing,7.0,3
+325.49,Get the Job,Job 80,Machine 4,,
+325.49,Setup,Job 80,Machine 4,,3
+326.84,Work Start,Job 27,Machine 1,,
+328.49,Work Start,Job 80,Machine 4,,
+329.08,Work Finish,Job 90,Machine 3,,
+329.08,Completed,Job 90,Sink,,94.86770705282211
+329.08,Routing Request,,Machine 3,7.0,
+329.08,Routing Start,,Routing,7.0,SSPT
+329.08,Move to Machine,Job 39,Routing,6.0,5
+329.08,Get the Job,Job 39,Machine 3,,
+329.08,Setup,Job 39,Machine 3,,5
+334.08,Work Start,Job 39,Machine 3,,
+334.3,Work Finish,Job 54,Machine 2,,
+334.3,Completed,Job 54,Sink,,170.54007200153424
+334.3,Routing Request,,Machine 2,6.0,
+334.3,Routing Start,,Routing,6.0,SSPT
+334.3,Move to Machine,Job 70,Routing,5.0,2
+334.3,Get the Job,Job 70,Machine 2,,
+334.3,Setup,Job 70,Machine 2,,2
+336.3,Work Start,Job 70,Machine 2,,
+339.5,Work Finish,Job 66,Machine 0,,
+339.5,Completed,Job 66,Sink,,149.87522008645465
+339.5,Routing Request,,Machine 0,5.0,
+339.5,Routing Start,,Routing,5.0,SSPT
+339.5,Move to Machine,Job 86,Routing,4.0,3
+339.5,Get the Job,Job 86,Machine 0,,
+339.5,Setup,Job 86,Machine 0,,3
+342.5,Work Start,Job 86,Machine 0,,
+345.57,Work Finish,Job 27,Machine 1,,
+345.57,Completed,Job 27,Sink,,247.6570422034543
+345.57,Routing Request,,Machine 1,4.0,
+345.57,Routing Start,,Routing,4.0,SSPT
+345.57,Move to Machine,Job 99,Routing,3.0,3
+345.57,Get the Job,Job 99,Machine 1,,
+345.57,Setup,Job 99,Machine 1,,3
+348.36,Work Finish,Job 80,Machine 4,,
+348.36,Completed,Job 80,Sink,,137.12321644528754
+348.36,Routing Request,,Machine 4,3.0,
+348.36,Routing Start,,Routing,3.0,SSPT
+348.36,Move to Machine,Job 16,Routing,2.0,4
+348.36,Get the Job,Job 16,Machine 4,,
+348.36,Setup,Job 16,Machine 4,,4
+348.57,Work Start,Job 99,Machine 1,,
+352.05,Work Finish,Job 39,Machine 3,,
+352.05,Completed,Job 39,Sink,,226.2314923027738
+352.05,Routing Request,,Machine 3,2.0,
+352.05,Routing Start,,Routing,2.0,SSPT
+352.05,Move to Machine,Job 68,Routing,1.0,2
+352.05,Get the Job,Job 68,Machine 3,,
+352.05,Setup,Job 68,Machine 3,,2
+352.36,Work Start,Job 16,Machine 4,,
+354.05,Work Start,Job 68,Machine 3,,
+355.67,Work Finish,Job 70,Machine 2,,
+355.67,Completed,Job 70,Sink,,161.66079095484616
+355.67,Routing Request,,Machine 2,1.0,
+355.67,Routing Start,,Routing,1.0,SSPT
+355.67,Move to Machine,Job 28,Routing,0.0,3
+355.67,Get the Job,Job 28,Machine 2,,
+355.67,Setup,Job 28,Machine 2,,3
+358.67,Work Start,Job 28,Machine 2,,
+362.32,Work Finish,Job 86,Machine 0,,
+362.32,Completed,Job 86,Sink,,141.74890278977875
+367.54,Work Finish,Job 99,Machine 1,,
+367.54,Completed,Job 99,Sink,,92.58065070927677
+371.92,Work Finish,Job 16,Machine 4,,
+371.92,Completed,Job 16,Sink,,305.6928436775743
+373.8,Work Finish,Job 68,Machine 3,,
+373.8,Completed,Job 68,Sink,,180.3851538047602
+378.63,Work Finish,Job 28,Machine 2,,
+378.63,Completed,Job 28,Sink,,277.17501118879113

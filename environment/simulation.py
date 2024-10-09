@@ -24,6 +24,7 @@ class Source:
         self.monitor = monitor
         self.j_list = j_list  # job list
         self.lmbda = lmbda  # IAT 평균
+        self.iat = pd.read_csv('IAT100.csv').to_numpy()
         self.ddt = ddt  # due date tightness
         self.routing = routing  # routing class
         self.monitor = monitor
@@ -48,7 +49,9 @@ class Source:
                 self.routing.queue_event.succeed()
             self.routing.queue_list = copy.deepcopy([job for job in self.routing.queue.items])
 
-            iat = np.random.exponential(self.lmbda)
+            # iat = np.random.exponential(self.lmbda)
+            # yield self.env.timeout(iat)
+            iat=float(self.iat[self.created-1])
             yield self.env.timeout(iat)
 
 
@@ -258,7 +261,8 @@ class Process:
         self.sink = sink
         self.monitor = monitor
         self.pt_var = pt_var
-        self.setup = random.randint(0, 5)
+        self.setup = 0
+        # self.setup = random.randint(0, 5)
         self.basic_setup = 2
 
         self.queue = simpy.Store(env)
@@ -290,8 +294,10 @@ class Process:
                 yield self.env.timeout(setup_time)
                 self.setup = job.feature
 
-            pt_var = np.random.uniform(low=1 - self.pt_var, high=1 + self.pt_var)
-            processing_time = pt_var * job.processing_time
+            # pt_var = np.random.uniform(low=1 - self.pt_var, high=1 + self.pt_var)
+            # processing_time = pt_var * job.processing_time
+            processing_time = job.processing_time
+
             self.monitor.record(time=self.env.now, event="Work Start", job=job.name, class_name=self.name)
             yield self.env.timeout(processing_time)
             self.monitor.record(time=self.env.now, event="Work Finish", job=job.name, class_name=self.name)
@@ -304,7 +310,8 @@ class Process:
                 break
 
     def reset(self):
-        self.setup = random.randint(0, 5)
+        # self.setup = random.randint(0, 5)
+        self.setup = 0
         self.queue.items = list()
         self.job = None
         self.idle = True

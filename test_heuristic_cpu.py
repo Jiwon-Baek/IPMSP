@@ -44,7 +44,8 @@ if __name__ == "__main__":
         f.write('Type,Index,reward,r_tard,r_setup,SSPT,ATCS,MDD,COVERT,Avg_setup,Avg_tardiness,DDT,PT_var\n')
 
     mapping = {0: "SSPT", 1: "ATCS", 2: "MDD", 3: "COVERT", 4:"RL"}
-    for i in [0, 1, 2, 3, 4]:
+    for i in [0, 1, 2, 3]:
+    # for i in [0, 1, 2, 3, 4]:
         for pt_var in [0.1, 0.2, 0.3, 0.4, 0.5]:
             for ddt in [0.8, 0.9, 1.0, 1.1, 1.2]:
                 for idx in range(2):
