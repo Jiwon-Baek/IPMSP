@@ -1,5 +1,4 @@
 import os
-import vessl
 import torch
 import json
 import math

@@ -38,6 +38,7 @@ class Source:
             created_job.due_date = self.env.now + self.ddt * created_job.processing_time
             self.monitor.record(time=self.env.now, job=created_job.name, event="Created", class_name=self.name,
                                 memo=created_job.due_date)
+            # print('Job {0}created on Source'.format(self.created))
 
             self.routing.queue.put(created_job)
             self.monitor.record(time=self.env.now, job=created_job.name, event="Move to Routing", class_name=self.name,
@@ -92,6 +93,7 @@ class Routing:
                 self.queue_event = self.env.event()
 
             decision = yield self.waiting_event.get()
+            # print('Router got an waiting event on', self.env.now)
             self.decision = decision[0]
             self.machine = decision[1]  # routing을 요청한 machine 이름
             self.indicator = True   # agent로부터 action을 받아와야한다는 표시
@@ -124,7 +126,7 @@ class Routing:
             self.setup = abs(next_job.feature - self.model[self.machine].setup) + self.basic_setup
             # self.setup = abs(next_job.feature - self.model[self.machine].setup)
             self.monitor.record(time=self.env.now, job=next_job.name, event="Move to Machine", class_name=self.name,
-                                queue=len(self.queue.items), memo=self.setup)
+                                queue=len(self.queue.items), memo="Machine current setup " + str(self.model[self.machine].setup))
             self.model[self.machine].queue.put(next_job)
 
     def _sspt(self):
@@ -276,6 +278,7 @@ class Process:
     def run(self):
         while True:
             self.routing.waiting_event.put([self.env.event(), self.name])
+            # print('Waiting event generated on Process{0}'.format(self.name))
             self.monitor.record(time=self.env.now, event="Routing Request", class_name=self.name,
                                 queue=len(self.routing.queue.items))
 
@@ -289,7 +292,7 @@ class Process:
 
             if setup_time > 0:
                 self.monitor.record(time=self.env.now, job=job.name, event="Setup", class_name=self.name,
-                                    memo=setup_time)
+                                    memo="Job Setup Type "+str(job.feature))
                 self.monitor.setup += setup_time
                 yield self.env.timeout(setup_time)
                 self.setup = job.feature

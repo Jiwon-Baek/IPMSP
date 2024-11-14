@@ -3,6 +3,7 @@ agent/__pycache__/
 data/__pycache__/
 environment/__pycache__/
 output/__pycache__/
+output/
 test_ppo_ep1_tt_avg/__pycache__/
 __pycache__/
 trained_model/__pycache__/

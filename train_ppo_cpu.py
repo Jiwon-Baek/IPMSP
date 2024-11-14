@@ -3,11 +3,8 @@ import torch
 import json
 import math
 
-# from cfg import get_cfg
-
 from cfg_local import Configure
 from agent.ppo import *
-# from environment.env_jiwon import PMSP
 from environment.env import PMSP
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
