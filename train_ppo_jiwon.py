@@ -1,9 +1,4 @@
-import os
-import torch
-import json
-import math
-
-from cfg import get_cfg
+from miscellaneous.cfg import get_cfg
 from agent.ppo import *
 # from environment.env_jiwon import PMSP
 from environment.env import PMSP

@@ -2,72 +2,75 @@ import os
 import torch
 import json
 import math
-
+import time
 from cfg_local import Configure
 from agent.ppo import *
 from environment.env import PMSP
 
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+# device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+device = torch.device("cpu")
 print(device)
 
 if __name__ == "__main__":
     cfg = Configure()
-    # if cfg.use_vessl:
-    #     vessl.init(organization="snu-eng-dgx", project="Final-General-PMSP", hp=cfg)
 
     rule_weight = {100: {"ATCS": [2.730, 1.153], "COVERT": 6.8},
                    200: {"ATCS": [3.519, 1.252], "COVERT": 4.4},
                    400: {"ATCS": [3.338, 1.209], "COVERT": 3.9}}
 
-    # rule_weight = {100: {"ATCS": [2.7, 1.2], "COVERT": 6.8},
-    #                200: {"ATCS": [3.5, 1.3], "COVERT": 4.4},
-    #                400: {"ATCS": [3.3, 1.2], "COVERT": 3.9}}
-
     load_model = False
     weight_list = [0.5]
-    # weight_list = [0.0, 0.25, 0.5, 0.75, 1.0]
-    # weight_list = [0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.0]
     for weight in weight_list:
         weight_tard = weight
         weight_setup = 1 - weight
         optim = cfg.optim
-        learning_rate = cfg.lr
+        learning_rate = 1e-5
         K_epoch = cfg.K_epoch
         T_horizon = cfg.T_horizon
         num_episode = cfg.n_episode
-        num_job = cfg.num_job
+        num_job = 100
         num_m = cfg.num_machine
-        keyword = "240620_12"
 
-        dir = './output/{5}_lr_{0}_K_{1}_T_{2}_2_{3}_{4}/'.format(learning_rate, K_epoch, T_horizon,
-                                                                              round(10 * weight),
-                                                                              10 - round(10 * weight), keyword)
-        if not os.path.exists(dir):
-            os.makedirs(dir)
+        with open("sample{0}.json".format(num_job), 'r') as f:
+            sample_data = json.load(f)
 
-        model_dir = dir + 'model/'
+        time = 	time.strftime('%Y%m%d_%H_%M_%S')
+        keyword = "test_" + time
+
+        dirpath = './output/{0}/'.format(keyword)
+        if not os.path.exists(dirpath):
+            os.makedirs(dirpath)
+
+        model_dir = dirpath + 'model/'
         if not os.path.exists(model_dir):
             os.makedirs(model_dir)
 
-        simulation_dir = dir + 'simulation/'
+        simulation_dir = dirpath + 'simulation/'
         if not os.path.exists(simulation_dir):
             os.makedirs(simulation_dir)
 
-        log_dir = dir + 'log/'
+        log_dir = dirpath + 'log/'
         if not os.path.exists(log_dir):
             os.makedirs(log_dir)
-
-        env = PMSP(num_job=num_job, num_m=num_m, reward_weight=[weight_tard, weight_setup],
-                   rule_weight=rule_weight[num_job])
+        pt_var = 0.2
+        test_data = sample_data[str(0)]
+        ddt = test_data['ddt']
+        env = PMSP(num_job=num_job,
+                   test_sample=test_data,
+                   num_m=num_m,
+                   reward_weight=[weight_tard, weight_setup],
+                   rule_weight=rule_weight[num_job],
+                   ddt=ddt, pt_var=pt_var, is_train=False)
         agent = PPO(cfg, env.state_dim, env.action_dim, optimizer_name=optim, K_epoch=K_epoch).to(device)
         start_episode = 1
-
-        n_episode = cfg.n_episode
-        n_record = 100
-        # with open(log_dir + "train_log.csv", 'w') as f:
+        # n_episode = cfg.n_episode
+        n_episode = 500
+        n_record = 1
         with open(log_dir + "train_log.csv", 'w') as f:
             f.write('episode, reward, reward_tard, reward_setup, SSPT, ATCS, MDD, COVERT,Avg_tardy,DDT,PT_var\n')
         # for episode in range(start_episode, start_episode + num_episode):
+
+
 
         for episode in range(1, n_episode + 1):
             if episode % n_record == 0 or episode == 1:
@@ -106,13 +109,16 @@ if __name__ == "__main__":
 
                 agent.put_data((state, action, reward, next_state, prob[action].item(), done))
                 state = next_state
-
                 r_epi += reward
                 if done:
                     tardiness = env.monitor.tardiness / env.num_job
                     setup = env.monitor.setup / env.num_job
                     mean_number_of_tardy_jobs = sum_tardy/env.num_job
                     makespan = env.sink.makespan
+                    str_reward = str(math.trunc(-r_epi * 100))
+                    env.monitor.get_logs(simulation_dir + "{0}_sample{1}_test{2}_ep{3}_{4}.csv".format(
+                        'RL', num_job, '0', episode, str_reward))
+
                     weight = round(weight, 1)
                     print("{0}_{1} |".format(int(10 * weight), int(round(10 * (1 - weight), 1))),
                           "episode: %d | reward: %.4f | Setup: %.4f | Tardiness %.4f | makespan %.4f | " % (

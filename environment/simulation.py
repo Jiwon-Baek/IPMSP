@@ -337,7 +337,7 @@ class Sink:
         self.monitor.tardiness += tardiness
         self.tardiness.append(tardiness)
         self.makespan = self.env.now
-        self.monitor.record(time=self.env.now, job=job.name, event="Completed", class_name="Sink", memo=tardiness)
+        self.monitor.record(time=self.env.now, job=job.name, event="Completed", class_name="Sink", memo=round(tardiness,4))
 
     def reset(self):
         self.completed = 0

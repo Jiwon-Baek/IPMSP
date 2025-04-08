@@ -31,5 +31,4 @@ def get_cfg():
     return args
 
 
-python run.py --env OE --use_vessl 1 
-    
+# python run.py --env OE --use_vessl 1

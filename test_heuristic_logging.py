@@ -43,7 +43,7 @@ if __name__ == "__main__":
     num_m = cfg.num_machine
     trained_model = "240620_10_lr_0.0001_K_1_T_1_2_5_5"
     # 폴더명으로 쓸 keyword 입력
-    keyword = "241114_Heuristic_test_01_" + str(num_job)
+    keyword = "241114_Heuristic_test_02_" + str(num_job)
     dirpath = './output/{0}/'.format(keyword)
     if not os.path.exists(dirpath):
         os.makedirs(dirpath)
@@ -88,6 +88,7 @@ if __name__ == "__main__":
                     action = i
                 action_list[action] += 1
                 next_state, reward, done = env.step(action)
+                pick_tardy = True if env.recent_tardy[-1] else False
 
                 # if i == 4:
                 #     agent.put_data((state, action, reward, next_state, prob[action].item(), done))

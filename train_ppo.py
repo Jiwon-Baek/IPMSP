@@ -1,10 +1,6 @@
-import os
 import vessl
-import torch
-import json
-import math
 
-from cfg import get_cfg
+from miscellaneous.cfg import get_cfg
 from agent.ppo import *
 from environment.env import PMSP
 

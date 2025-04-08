@@ -10,8 +10,7 @@ from agent.ada_hessian import AdaHessian
 from torch.distributions import Categorical
 from environment.env import *
 
-device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-
+device = torch.device("cpu")
 
 class PPO(nn.Module):
     def __init__(self, cfg, state_dim, action_dim, lr=None, optimizer_name=None, eps_clip=None, K_epoch=None):

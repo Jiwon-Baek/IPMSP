@@ -61,8 +61,10 @@ class PMSP:
         self.routing.indicator = False
         if len(self.routing.is_tardy)>0:
             self.recent_tardy.append(self.routing.is_tardy[-1])
+
         else:
             self.recent_tardy.append(False)
+
         while True:
             if self.routing.indicator:
                 if self.sim_env.now != self.time:
